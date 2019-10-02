@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce-rest-api",
+  "version": "1.0.0",
+  "description": "A REST API for a simple E-Commerce webiste.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Sherif Hussien",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "multer": "^1.4.2",
+    "validator": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

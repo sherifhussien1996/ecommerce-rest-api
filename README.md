@@ -61,14 +61,37 @@ First make sure you have postman app on your local machine to be able to constru
 
 Following are the routes provided by our service, make sure to set the params and action of each request as stated
 
-### Application
-* `GET /api/v1/applications` => gets the list of all applications
-* `POST /api/v1/applications?name=app_name` => creates an app with the name app_name provided in the params {params: name}
-* `PUT /api/v1/applications/:token`  => updates an app
+### User
+* `POST /api/users/login`  
+* `POST /api/users/register` 
+* `GET /api/users/`
+* `POST /api/users/admin`
+* `PUT /api/users/activate`
+* `PUT /api/users/deactivate`
+* `GET /api/users/:userId/orders/`
+* `PUT /api/users/:userId/orders/:orderId/status`
 
 
-### Chat
-* `GET /api/v1/applications/:application_token/chats` => gets the list of all chats of a certain application
-* `POST /api/v1applications/:application_token/chats` => creates a chat for a certain application
-* `PUT /api/v1/applications/:application_token/chats/:number`  => updates the content a chat of a certain application {params: messages_count}
+### Category
+* `GET /api/product-category`  
+* `POST /api/product-category` 
+* `GET /api/product-category/:categoryId`
+* `PUT /api/product-category/:categoryId`
+* `DELETE /api/product-category/:categoryId`
 
+### Product
+* `GET /api/products`  
+* `POST /api/products` 
+* `GET /api/products/:productId`
+* `PUT /api/products/:productId`
+* `DELETE /api/products/:productId`
+* `POST /api/products/:productId/upload`
+* `GET /api/products/filter`
+
+### Order
+* `GET /api/orders`  
+* `POST /api/orders` 
+* `GET /api/orders/:orderId`
+* `DELETE /api/orders/:orderId`
+* `PUT /api/orders/:orderId/add`
+* `PUT /api/orders/:orderId/remove`

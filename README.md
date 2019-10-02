@@ -1,4 +1,4 @@
-# Chat System API
+# E-Commerce REST API
 
 A REST API for a simple E-Commerce webiste using __nodejs__.
 
@@ -16,7 +16,6 @@ To make sure they were installed successfully, type the following on your termin
 $ docker --version
 $ docker-compose --version
 ```
-
 
 
 ## Setup

@@ -9,20 +9,20 @@ const login = async (req, res) => {
     })
     if (!user) {
         return res.status(400).json({
-            'error': 'Invalid login credentials'
+            message: 'Invalid login credentials'
         })
     }
 
     if (!user.is_active) {
-        return res.status(400).json({
-            'error': 'Invalid login credentials'
+        return res.status(500).json({
+            message: 'Invalid login credentials'
         })
     }
 
     const isPasswordMatch = await bcrypt.compare(req.body.password, user.password)
     if (!isPasswordMatch) {
         res.status(400).json({
-            'error': 'Invalid login credentials'
+            message: 'Invalid login credentials'
         })
     }
 
@@ -62,7 +62,7 @@ const createAdmin = async (req, res) => {
     if(!name || !email || !password){
         return res.status(400)
             .json({
-                'message': 'Bad Request'
+                message: 'Bad Request'
             })
     }
 
@@ -77,12 +77,12 @@ const createAdmin = async (req, res) => {
         await admin.save()
         return res.status(201)
             .json({
-                'message': admin
+                message: admin
             })
     }catch(err){
-        return res.status(400)
+        return res.status(500)
             .json({
-                'message': 'Bad Request'
+                message: 'Bad Request'
             })
     }
 }
@@ -95,13 +95,13 @@ const getUsers = async (req, res) => {
 
         return res.status(200)
             .json({
-                'message': users
+                message: users
             })
 
     }catch(err){
-        return res.status(400)
+        return res.status(500)
             .json({
-                'message': 'Bad Request'
+                message: 'Bad Request'
             })
     }
 }
@@ -115,12 +115,12 @@ const activateUser = async (req, res) => {
 
         return res.status(200)
             .json({
-                'message': user
+                message: user
             })
     } catch (err) {
-        return res.status(400)
+        return res.status(500)
             .json({
-                'message': 'unable to activate user'
+                message: 'unable to activate user'
             })
     }
 }
@@ -134,12 +134,12 @@ const deactivateUser = async (req, res) => {
 
         return res.status(200)
             .json({
-                'message': user
+                message: user
             })
     } catch(err){
-        return res.status(400)
+        return res.status(500)
             .json({
-                'message': 'unable to deactivate user'
+                message: 'unable to deactivate user'
             })
     }
 }
